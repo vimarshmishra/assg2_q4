@@ -1,0 +1,44 @@
+
+Documentation for Dijkstra's Algorithm Implementation in C
+Overview
+This project implements Dijkstra's single-source shortest path algorithm. The algorithm finds the shortest path from a source vertex to all other vertices in a given graph represented by an adjacency matrix. The key functions and their purposes are documented below.
+
+File: main.c
+Includes and Definitions
+#include <stdio.h>: Includes the standard input-output library for functions like printf and scanf.
+#include <stdlib.h>: Includes the standard library for general functions like memory allocation.
+#define MAX 100: Defines a constant for the maximum number of vertices in the graph.
+#define INF 99999: Defines a constant to represent infinite distance.
+Function: minDistance
+Purpose: Finds the vertex with the minimum distance value from the set of vertices that have not yet been included in the shortest path tree (SPT).
+Parameters:
+dist[]: Array containing the minimum distances from the source vertex to all other vertices.
+sptSet[]: Boolean array where each entry indicates whether the corresponding vertex has been included in the SPT.
+n: Number of vertices in the graph.
+Returns: The index of the vertex with the minimum distance value that has not yet been processed.
+Function: printSolution
+Purpose: Prints the calculated shortest distances from the source vertex to all other vertices.
+Parameters:
+dist[]: Array containing the minimum distances from the source vertex to all other vertices.
+n: Number of vertices in the graph.
+Function: dijkstra
+Purpose: Implements Dijkstra's algorithm to find the shortest path from the source vertex to all other vertices in the graph.
+Parameters:
+graph[MAX][MAX]: Adjacency matrix representation of the graph where graph[i][j] is the weight of the edge from vertex i to vertex j.
+src: Source vertex from which the shortest paths are calculated.
+n: Number of vertices in the graph.
+Algorithm:
+Initializes distances from the source vertex to all vertices as infinite, and marks all vertices as not included in the SPT.
+Sets the distance of the source vertex from itself to 0.
+Repeatedly selects the vertex with the minimum distance that has not yet been processed using the minDistance function.
+Updates the distance values of the selected vertex's adjacent vertices.
+Uses the printSolution function to print the results.
+Main Function
+Purpose: Main driver function to execute the program.
+Steps:
+Prompts the user to enter the number of vertices (n).
+Prompts the user to enter the adjacency matrix of the graph.
+Prompts the user to enter the source vertex.
+Calls the dijkstra function to compute the shortest paths from the source vertex.
+Prints the results using the printSolution function.
+Summary
